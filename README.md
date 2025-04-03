@@ -96,6 +96,12 @@ or
 scripts/openssl/build-static-openssl-macos-m1.sh
 ```
 
+## On Linux
+
+```bash
+./scripts/openssl/build-static-openssl-linux.sh
+```
+
 Build the library by running
 
 `make build`
@@ -103,7 +109,6 @@ Build the library by running
 To test the library, run
 
 `make test`
-
 
 To run the demos and benchmarks, you first need to install the library:
 
@@ -114,6 +119,144 @@ This will copy the `.a` files and header files to `/usr/local/opt/cbmpc/lib`
 To run the demos (both cpp and go), run
 
 `make demos`
+
+<details><summary>If encountered this issue while running <code>make demos</code> cmd</summary>
+<p>
+
+```bash
+---
+root@ubuntu:/home/ubuntu/cb-mpc# make demos
+bash -c 'bash ./scripts/run-demos.sh --run-all'
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+======= Build system: Linux =======
+IS_X86_64:                      true
+IS_ARM64:                       
+IS_LINUX:                       true
+IS_APPLE:                       
+IS_IOS:                         
+IS_IOS_SIMULATOR:               
+IS_ANDROID:                     
+IS_MACOS:                       
+IS_WASM:                        
+IS_WASM_TYPES:                  
+IS_CLANG:                       
+CMAKE_OS:                       Linux
+CMAKE_ARCH:                     
+======= Flags =======
+CMAKE_CXX_FLAGS:                 -std=c++17 -fPIC -fvisibility=hidden -fno-operator-names -Wno-attributes -Wno-null-dereference -Wno-parentheses -Wno-reorder -Wno-missing-braces -Wno-switch -Wno-switch-enum -Wno-sign-compare -Wno-strict-overflow -Wno-unused -Wno-parentheses -Werror -Wno-shorten-64-to-32 -DNO_DEPRECATED_OPENSSL -Wno-maybe-uninitialized -mpclmul -maes -msse4.1
+CMAKE_SHARED_LINKER_FLAGS:       -Wl,--exclude-libs,ALL -Wl,-z,defs -z noexecstack -z nodelete
+CMAKE_EXE_LINKER_FLAGS:          -Wl,--exclude-libs,ALL -Wl,-z,defs -z noexecstack -z nodelete
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build
+gmake[1]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+gmake[2]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+gmake[3]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+gmake[3]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+gmake[3]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+[ 50%] Building CXX object CMakeFiles/mpc-demo-basic_primitive.dir/main.cpp.o
+[100%] Linking CXX executable mpc-demo-basic_primitive
+gmake[3]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+[100%] Built target mpc-demo-basic_primitive
+gmake[2]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+gmake[1]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/basic_primitive/build'
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+======= Build system: Linux =======
+IS_X86_64:                      true
+IS_ARM64:                       
+IS_LINUX:                       true
+IS_APPLE:                       
+IS_IOS:                         
+IS_IOS_SIMULATOR:               
+IS_ANDROID:                     
+IS_MACOS:                       
+IS_WASM:                        
+IS_WASM_TYPES:                  
+IS_CLANG:                       
+CMAKE_OS:                       Linux
+CMAKE_ARCH:                     
+======= Flags =======
+CMAKE_CXX_FLAGS:                 -std=c++17 -fPIC -fvisibility=hidden -fno-operator-names -Wno-attributes -Wno-null-dereference -Wno-parentheses -Wno-reorder -Wno-missing-braces -Wno-switch -Wno-switch-enum -Wno-sign-compare -Wno-strict-overflow -Wno-unused -Wno-parentheses -Werror -Wno-shorten-64-to-32 -DNO_DEPRECATED_OPENSSL -Wno-maybe-uninitialized -mpclmul -maes -msse4.1
+CMAKE_SHARED_LINKER_FLAGS:       -Wl,--exclude-libs,ALL -Wl,-z,defs -z noexecstack -z nodelete
+CMAKE_EXE_LINKER_FLAGS:          -Wl,--exclude-libs,ALL -Wl,-z,defs -z noexecstack -z nodelete
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/cb-mpc/demos/demos-cpp/zk/build
+gmake[1]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+gmake[2]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+gmake[3]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+gmake[3]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+gmake[3]: Entering directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+[ 50%] Building CXX object CMakeFiles/mpc-demo-zk.dir/main.cpp.o
+[100%] Linking CXX executable mpc-demo-zk
+gmake[3]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+[100%] Built target mpc-demo-zk
+gmake[2]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+gmake[1]: Leaving directory '/home/ubuntu/cb-mpc/demos/demos-cpp/zk/build'
+================ hash ===============
+hash_string() = !p�������9I�4
+hash_number() = 14028708065946319012623502598080414398684851644016047064283527369179693789236
+hash_curve() = 39474432851047904829495546702228241449012346763173886845934003543097368676385
+=============== commitment ===========
+commitment: 48881987957672782885934201568492752963652452262648903067789954614024271377435
+0
+================ ZK Demo ===============
+---------------- ZK_UC_DL-P256 ----------------
+
+***** Setup *****
+Prover's private input w, a random number from Z_q: 11511080152431076193144488104214359588183067121356919082201458831196599729934
+Common input: Q = w * G: 
+  Q.x = 113912529447054980704135968079842487770678715246767961430873242716252990630805
+  Q.y = 103682399928530129222932410747859350548918995160179583880355472605216791134188
+Prover proves that he knows w such that Q = w * G.
+
+***** Prove *****
+Prover calls zk.prove(Q, w, sid, aux) to generate a proof.
+Prover's proof contains : A[16], e[16], z[16], where 16 is the Fischlin parameters we use.
+  A[0].x = 75247185740195680795672259801526681232292324238351534387601943673076978651278
+  A[0].y = 100002056572075990734120350496720740669216573959293418916545725536595300218255
+  e[0] = 13
+  z[0] = 111997346623749763064273552204768403319460481154701572791472939880224573717326
+  ...
+The proof size is 2315 bytes.
+
+***** Verify *****
+Verifier calls zk.verify(Q, sid, aux) to verify the proof.
+The proof is valid.
+# command-line-arguments
+/usr/local/go/pkg/tool/linux_amd64/link: running g++ failed: exit status 1
+/usr/bin/g++ -m64 -s -Wl,--build-id=0xcc28e3104875f3e0403493f0fb68e9d8611a494d -o $WORK/b001/exe/main -Wl,--export-dynamic-symbol=_cgo_panic -Wl,--export-dynamic-symbol=_cgo_topofstack -Wl,--export-dynamic-symbol=callback_receive -Wl,--export-dynamic-symbol=callback_receive_all -Wl,--export-dynamic-symbol=callback_send -Wl,--export-dynamic-symbol=crosscall2 -Wl,--compress-debug-sections=zlib /tmp/go-link-2646965676/go.o /tmp/go-link-2646965676/000000.o /tmp/go-link-2646965676/000001.o /tmp/go-link-2646965676/000002.o /tmp/go-link-2646965676/000003.o /tmp/go-link-2646965676/000004.o /tmp/go-link-2646965676/000005.o /tmp/go-link-2646965676/000006.o /tmp/go-link-2646965676/000007.o /tmp/go-link-2646965676/000008.o /tmp/go-link-2646965676/000009.o /tmp/go-link-2646965676/000010.o /tmp/go-link-2646965676/000011.o /tmp/go-link-2646965676/000012.o /tmp/go-link-2646965676/000013.o /tmp/go-link-2646965676/000014.o /tmp/go-link-2646965676/000015.o /tmp/go-link-2646965676/000016.o -O2 -g -ldl /usr/local/lib64/libcrypto.a -L/usr/local/opt/cbmpc/lib -lcbmpc /usr/local/lib64/libcrypto.a -O2 -g -lpthread -no-pie
+/usr/bin/ld: cannot find /usr/local/lib64/libcrypto.a: No such file or directory
+/usr/bin/ld: cannot find /usr/local/lib64/libcrypto.a: No such file or directory
+collect2: error: ld returned 1 exit status
+
+make: *** [Makefile:121: demos] Error 1
+root@ubuntu:/home/ubuntu/cb-mpc#
+```
+
+</p>
+</details>
+
+How to resolve above issue:
+
+```bash
+## Check where OpenSSL installed libcrypto.a
+find /usr/lib /usr/local/lib -name "libcrypto.a"
+# /usr/lib/x86_64-linux-gnu/libcrypto.a
+
+## If libcrypto.a exists in a different location, create a symbolic link
+sudo ln -s /usr/lib/x86_64-linux-gnu/libcrypto.a /usr/local/lib64/libcrypto.a
+```
 
 To run the benchmarks, run
 
